@@ -1,0 +1,40 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "e2e/config.json",
+  "apps": {
+    "ios": {
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/tasks_app.app",
+      "build": "xcodebuild -workspace ios/tasks_app.xcworkspace -scheme tasks_app -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build"
+    },
+    "android": {
+      "type": "android.apk",
+      "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+      "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd .."
+    }
+  },
+  "devices": {
+    "simulator": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone 8"
+      }
+    },
+    "emulator": {
+      "type": "android.emulator",
+      "device": {
+        "avdName": "Nexus_5X_API_28"
+      }
+    }
+  },
+  "configurations": {
+    "ios": {
+      "device": "simulator",
+      "app": "ios"
+    },
+    "android": {
+      "device": "emulator",
+      "app": "android"
+    }
+  }
+}
