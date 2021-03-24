@@ -11,6 +11,12 @@ describe('Testar funcionalidades do app tasks', () => {
     await expect(element(by.text('TDC Tasks'))).toBeVisible();
   });
 
+  it('Não deve navegar para a próxima tela se não preencher nenhuma tarefa', async () => {
+    await element(by.id('buttonAddtask')).tap();
+
+    await expect(element(by.text('TDC Tasks'))).toBeVisible();
+  });
+
   it('Navegar para a lista de tarefas', async () => {
     await element(by.id('buttonAddtask')).tap();
 
