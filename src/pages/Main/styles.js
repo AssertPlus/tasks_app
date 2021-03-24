@@ -54,11 +54,21 @@ const styles = StyleSheet.create({
     width: '100%'
   },
 
-  button: {
+  buttonEnabled: {
     height: 54,
     width: '100%',
     borderRadius: 10,
     backgroundColor: '#00008b',
+
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
+  buttonDisabled: {
+    height: 54,
+    width: '100%',
+    borderRadius: 10,
+    backgroundColor: '#808080',
 
     alignItems: 'center',
     justifyContent: 'center'

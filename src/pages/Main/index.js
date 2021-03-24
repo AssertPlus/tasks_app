@@ -37,16 +37,18 @@ const Main = ({navigation}) => {
           <TextInput
             style={styles.inputTask}
             testID='inputTask'
+            value={task}
             placeholder="Preencha o nome da tarefa"
-            onChangeText={text => setTask(text)}
+            onChangeText={text => setTask(text)}          
           />
         </View>
 
         <View style={styles.containerButton}>
           <TouchableOpacity
-            style={styles.button}
+            style={!task ? styles.buttonDisabled : styles.buttonEnabled}
             onPress={handleGoList}
             testID='buttonAddtask'
+            disabled={!task ? true : false}
           >
             <Text style={styles.textButton}>Adicionar tarefa</Text>
           </TouchableOpacity>
